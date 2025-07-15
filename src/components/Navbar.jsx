@@ -12,10 +12,11 @@ const Navbar = () => {
       <div className="container px-4 2xl:px-20 mx-auto flex justify-between items-center">
         <img src={assets.logo} alt="logo" />
         {user ? (
-          <div>
-            <Link>Applied Jobs</Link>
+          <div className="flex items-center gap-3">
+            <Link to= {'/applications'}>Applied Jobs</Link>
             <p>|</p>
             <p>Hey, {user.firstName+ " " +user.lastName}</p>
+            <UserButton/> 
           </div>
         ) : (
           <div className="flex gap-4 max-sm:text-xs">
