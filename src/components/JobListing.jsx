@@ -11,6 +11,16 @@ const JobListing = () => {
   const [showFilter, setShowFilter] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategories, setSelectedCategories] = useState([])
+  const [selectedLocations, setSelectedLocations] = useState([])
+   const [filteredJobs, setfilteredJobs] = useState(jobs)
+
+   const handleCategoryChange = (category) => {
+
+      setSelectedCategories(
+         prev => prev.includes(category) ? prev.filter(c => c !== category) : [...prev, category]
+      )
+   }
 
   return (
     <div className=" container 2xl:px-20 mx-auto flex flex-col lg:flex-row max-lg:space-y-8 py-8">
